@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +44,63 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+
+@extends('layouts.auth')
+
+@section('title', 'Login')
+
+@section('content')
+    <div class="card-body p-4 p-md-5">
+
+        <h2 class="h4 mb-4 text-center fw-semibold">Login</h2>
+
+         <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <!-- Email Address -->
+            <div class="mb-3">
+                <label for="email" class="form-label">{{ __('Email') }}</label>
+                <input
+                    id="email"
+                    class="form-control @error('email') is-invalid @enderror"
+                    type="email"
+                    name="email"
+                    value="{{ old('email') }}"
+                    required
+                    autocomplete="username"
+                >
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">{{ __('Password') }}</label>
+                <input
+                    id="password"
+                    class="form-control @error('password') is-invalid @enderror"
+                    type="password"
+                    name="password"
+                    required
+                    autocomplete="new-password"
+                >
+                @error('password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Footer -->
+            <div class="d-flex align-items-center justify-content-end mt-4">
+                <a class="already-link me-3 text-sm" href="{{ route('register') }}">
+                    {{ __('Don\'t have an account?') }}
+                </a>
+                <button type="submit" class="btn btn-primary px-4">
+                    {{ __('Login') }}
+                </button>
+            </div>
+        </form>
+    </div>
+@endsection
