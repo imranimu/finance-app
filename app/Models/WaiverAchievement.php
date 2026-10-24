@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WaiverAchievement extends Model
-{
-    use HasFactory;
+class WaiverAchievement extends Model {
+    protected $guarded = [];
 }
