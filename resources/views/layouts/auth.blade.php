@@ -8,15 +8,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons for the camera placeholder -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             background-color: #f8fafc;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .logo {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo i {
+            color: #10b981;
+            font-size: 30px;
+        }
+        .logo-sub {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 400;
         }
         .register-card {
-            max-width: 580px;
+            max-width: 500px;
             margin: 2rem auto;
             border: none;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #10b981;
+            border-radius: 20px;
         }
         .form-label {
             font-weight: 500;
@@ -80,10 +105,26 @@
         .avatar-preview.has-image .placeholder-icon {
             display: none;
         }
+        .btn-primary{
+            background-color: #10b981;
+            border-color: #10b981;
+        }
+        .btn-primary:hover{
+            background-color: #0f766e;
+            border-color: #0f766e;
+        }
     </style>
 </head>
 <body>
     <div class="container py-4">
+        <div class="logo">
+            <i class="fas fa-chart-pie"></i>
+            <div>
+                Imran Pro
+                <span class="logo-sub">Finance & Accounts</span>
+            </div>
+        </div>
+
         <div class="card register-card">
             @yield('content')
         </div>

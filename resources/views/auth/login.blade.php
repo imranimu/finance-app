@@ -94,9 +94,11 @@
 
             <!-- Footer -->
             <div class="d-flex align-items-center justify-content-end mt-4">
-                <a class="already-link me-3 text-sm" href="{{ route('register') }}">
-                    {{ __('Don\'t have an account?') }}
-                </a>
+                @if (Route::has('password.request'))
+                    <a class="already-link me-3 text-sm" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
                 <button type="submit" class="btn btn-primary px-4">
                     {{ __('Login') }}
                 </button>
