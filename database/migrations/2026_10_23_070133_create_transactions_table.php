@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('amount', 12, 2); // Added this
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->string('source')->nullable();
+            $table->foreignId('source_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
