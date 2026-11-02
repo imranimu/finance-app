@@ -4,19 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - {{ config('app.name', 'Finance App') }}</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <!-- Bootstrap 5 CSS (stable) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons for the camera placeholder -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-color: #f8fafc;
+            background-color: #141b23;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .logo {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #dbdbdb;
+        }
+        .logo i {
+            color: #10b981;
+            font-size: 30px;
+        }
+        .logo-sub {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 400;
         }
         .register-card {
-            max-width: 580px;
+            max-width: 480px;
             margin: 2rem auto;
             border: none;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+            box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .10);
+            border-top: 5px solid #10b981;
+            border-radius: 20px;
+            background: #171e2d;
+            color: #d5d5d5;
         }
         .form-label {
             font-weight: 500;
@@ -80,14 +113,31 @@
         .avatar-preview.has-image .placeholder-icon {
             display: none;
         }
+        .btn-primary{
+            background-color: #10b981;
+            border-color: #10b981;
+        }
+        .btn-primary:hover{
+            background-color: #0f766e;
+            border-color: #0f766e;
+        }
+        .logo img {
+            max-width: 200px;
+        }
     </style>
 </head>
 <body>
     <div class="container py-4">
+        <div class="logo">
+            <img src="/images/logo.svg" alt="Fynex Logo">
+        </div>
+
         <div class="card register-card">
             @yield('content')
         </div>
     </div>
+
+    <p style="font-size: 11px;" class="text-center text-white mt-4 mb-0">© {{ date('Y') }} Fynex. All rights reserved.</p>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
